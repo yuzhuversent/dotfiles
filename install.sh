@@ -18,7 +18,6 @@ DOTFILES=(
     .bash_profile
     .gitconfig
     .gitignore_global
-    .vimrc
     .tmux.conf
 )
 

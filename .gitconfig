@@ -110,7 +110,7 @@
 
 # ── Credential helpers ────────────────────────────────────────────────────────
 [credential]
-	helper = store          # use 'osxkeychain' on macOS
+	helper = manager        # uses git-credential-manager
 
 # ── URL rewrites (optional) ───────────────────────────────────────────────────
 # Uncomment to always use SSH instead of HTTPS for GitHub:

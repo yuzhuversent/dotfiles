@@ -10,7 +10,6 @@ Personal dotfiles for a productive terminal environment, managed as symlinks so 
 | `.bash_profile` | Login-shell entry point; sources `.bashrc` |
 | `.gitconfig` | Git user settings, aliases, colors, and sane defaults |
 | `.gitignore_global` | Machine-wide gitignore (OS junk, editor temp files, common build artifacts) |
-| `.vimrc` | Vim settings – indentation, search, key mappings, persistent undo |
 | `.tmux.conf` | tmux settings – vi keys, mouse, status bar, sane splits |
 | `install.sh` | Symlink all dotfiles into `$HOME` |
 
@@ -47,7 +46,6 @@ Each dotfile checks for a local override file that you create once per machine:
 | `~/.bashrc.local` | `.bashrc` |
 | `~/.bash_profile.local` | `.bash_profile` |
 | `~/.gitconfig.local` | `.gitconfig` (via `[include]`) |
-| `~/.vimrc.local` | `.vimrc` |
 
 Example `~/.gitconfig.local` for work machines:
 
@@ -65,7 +63,6 @@ dotfiles/
 ├── .gitconfig
 ├── .gitignore_global
 ├── .tmux.conf
-├── .vimrc
 ├── install.sh
 └── README.md
 ```
