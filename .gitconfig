@@ -93,7 +93,7 @@
 	f    = fetch --all --prune
 
 	# Stash
-	ss   = stash save
+	ss   = stash push
 	sp   = stash pop
 	sl   = stash list
 
