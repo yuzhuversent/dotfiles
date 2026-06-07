@@ -1,0 +1,110 @@
+# ~/.gitignore_global
+# Global gitignore – applied to every repository on this machine.
+# Register with: git config --global core.excludesfile ~/.gitignore_global
+
+# ── OS-generated files ────────────────────────────────────────────────────────
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ── Editor files ──────────────────────────────────────────────────────────────
+# Vim
+*.swp
+*.swo
+*.swn
+.netrwhist
+Session.vim
+tags
+.vim/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# ── Language / build artifacts ────────────────────────────────────────────────
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.pnp.*
+.yarn/
+
+# Go
+/vendor/
+*.test
+
+# Rust
+/target/
+
+# Java / Gradle / Maven
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+build/
+target/
+
+# ── Secrets / credentials ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa
+id_ed25519

@@ -1,0 +1,124 @@
+# ~/.gitconfig
+# Global Git configuration
+
+[user]
+	# Set your name and email.  Use the local override below, or run:
+	#   git config --global user.name  "Your Name"
+	#   git config --global user.email "you@example.com"
+	name  = Your Name
+	email = you@example.com
+
+[core]
+	editor     = vim
+	autocrlf   = input          # convert CRLF→LF on commit; leave LF alone on checkout
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	pager      = less -FRX
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false              # keep merge commits on pull by default
+
+[push]
+	default = current           # push to the remote branch with the same name
+
+[fetch]
+	prune = true                # remove remote-tracking refs that no longer exist
+
+[rebase]
+	autosquash = true           # auto-apply fixup!/squash! commit prefixes
+
+[merge]
+	conflictstyle = diff3       # show base, ours, and theirs in conflict markers
+	tool          = vimdiff
+
+[diff]
+	colorMoved = zebra
+
+[status]
+	short  = true
+	branch = true
+
+[log]
+	date   = iso
+	abbrevCommit = true
+
+[color]
+	ui     = auto
+
+[color "branch"]
+	current = yellow bold
+	local   = green
+	remote  = cyan
+
+[color "diff"]
+	meta    = yellow bold
+	frag    = magenta bold
+	old     = red bold
+	new     = green bold
+
+[color "status"]
+	added     = green bold
+	changed   = yellow bold
+	untracked = red bold
+
+# ── Aliases ───────────────────────────────────────────────────────────────────
+[alias]
+	# Basics
+	st   = status -sb
+	co   = checkout
+	cb   = checkout -b
+	br   = branch -vv
+	ci   = commit
+	cm   = commit -m
+	ca   = commit --amend --no-edit
+	can  = commit --amend
+
+	# Diff
+	d    = diff
+	ds   = diff --staged
+	dw   = diff --word-diff
+
+	# Log
+	l    = log --oneline --graph --decorate --all
+	ll   = log --pretty=format:'%C(yellow)%h%Creset %C(cyan)%ad%Creset %C(bold)%s%Creset %C(green)(%an)%Creset' --date=short
+	last = log -1 HEAD --stat
+
+	# Remote
+	pu   = push
+	puf  = push --force-with-lease
+	pl   = pull --rebase
+	f    = fetch --all --prune
+
+	# Stash
+	ss   = stash save
+	sp   = stash pop
+	sl   = stash list
+
+	# Undo
+	unstage = reset HEAD --
+	undo    = reset HEAD~1 --mixed
+	discard = checkout --
+
+	# Utility
+	aliases  = config --get-regexp alias
+	root     = rev-parse --show-toplevel
+	ignored  = ls-files --others --ignored --exclude-standard
+	contributors = shortlog -sn --no-merges
+
+# ── Credential helpers ────────────────────────────────────────────────────────
+[credential]
+	helper = store          # use 'osxkeychain' on macOS
+
+# ── URL rewrites (optional) ───────────────────────────────────────────────────
+# Uncomment to always use SSH instead of HTTPS for GitHub:
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com/
+
+# ── Include local overrides ───────────────────────────────────────────────────
+# Put machine- or project-specific settings in ~/.gitconfig.local
+# (e.g. a different email for work)
+[include]
+	path = ~/.gitconfig.local
